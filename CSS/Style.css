@@ -443,10 +443,12 @@ nav ul li a:hover::after {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 50px;
     padding: 0 20px;
     text-align: center;
     font-size: 14px;
     transition: height 0.7s;
+    display: none;
 }
 
 .image:hover .layer_pres {
@@ -464,6 +466,71 @@ nav ul li a:hover::after {
     font-size: 14px;
     font-weight: 400;
 }
+/* Afficher l'overlay lorsque le bouton est cliqué */
+.image.show-description .layer_pres {
+    display: flex; /* Affiche la description */
+    height: 100%;
+}
+
+/* Style du bouton */
+.show-description-btn {
+    margin: 10px 0;
+    display: none; /* Masqué par défaut */
+    position: absolute;
+    top: 10px; /* Utiliser top pour le placer au-dessus */
+    right: 10px; /* Optionnel : ajuste la position sur l'axe horizontal */
+    padding: 8px 15px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+
+/* Afficher le bouton uniquement sur mobile */
+@media (max-width: 768px) {
+    .show-description-btn {
+        display: block;
+    }
+}
+/* Styles pour les écrans mobiles */
+@media screen and (max-width: 430px) {
+    .layer_pres {
+        width: auto;
+        height: auto;
+        padding: 10px;
+        background-color: #F5F5DC;
+        border-radius: 10px;
+        bottom: 10px; /* Positionner en bas de l'image */
+        opacity: 1; /* Afficher directement le bouton */
+        cursor: pointer;
+        transition: transform 0.3s; /* Animation de clic */
+        margin-bottom: 10px;
+    }
+
+    .image:hover .layer_pres {
+        height: auto; /* Désactiver l'animation de survol sur mobile */
+    }
+
+    .layer_pres h3 {
+        font-size: 20px; /* Ajuster la taille pour mobile */
+    }
+
+    .layer_pres p {
+        font-size: 12px;
+    }
+}
+
+/* Desktop - Rétablir le comportement d'overlay au survol */
+@media screen and (min-width: 431px) {
+    .image:hover .layer_pres {
+        height: 100%; /* Affiche l'overlay au survol */
+    }
+}
+
 
 /* =========================== */
 /* ==== B E N C H M A R K === */

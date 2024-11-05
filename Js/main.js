@@ -1,6 +1,7 @@
 // Sélection des éléments
-const toggleButton = document.querySelector('.toggle-button');
+const toggleButton = document.querySelector('.toggle-button'); // Utiliser si nécessaire
 const contactBubble = document.querySelector('.contact-bubble');
+const scrollArrow = document.getElementById('scroll-arrow');
 
 // Fonction d’ouverture d'onglet
 function opentab(tabName) {
@@ -14,40 +15,31 @@ function opentab(tabName) {
     document.querySelector(`.tab-links[onclick="opentab('${tabName}')"]`).classList.add('active-link');
 }
 
-// Initialisation lors du chargement
-document.addEventListener("DOMContentLoaded", () => {
-    // Aucune autre logique pour l'icône ici
-});
-
-
 // Affiche ou cache la flèche en fonction du défilement
-window.addEventListener('scroll', function() {
-    const scrollArrow = document.getElementById('scroll-arrow');
-    const halfWindowHeight = window.innerHeight / 2; // Calculer la moitié de la hauteur de la fenêtre
+function toggleScrollArrow() {
+    const halfWindowHeight = window.innerHeight / 2;
 
-    if (window.scrollY > halfWindowHeight) { // Si l'utilisateur a défilé au-delà de la moitié de la fenêtre
+    if (window.scrollY > halfWindowHeight) {
         scrollArrow.classList.remove('hidden');
-        scrollArrow.style.opacity = 1; // Montre la flèche
+        scrollArrow.style.opacity = 1;
     } else {
         scrollArrow.classList.add('hidden');
-        scrollArrow.style.opacity = 0; // Cache la flèche
+        scrollArrow.style.opacity = 0;
     }
-});
+}
 
 // Fonction pour faire défiler la page vers le haut
-document.getElementById('scroll-arrow').addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Fait défiler vers le haut en douceur
-});
-
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
 // Modal script
-document.addEventListener("DOMContentLoaded", function() {
+function setupModal() {
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImage");
     const captionText = document.getElementById("caption");
     const closeBtn = document.getElementsByClassName("close")[0];
 
-    // Ouvre la modal avec l'image cliquée
     document.querySelectorAll(".clickable-image").forEach(img => {
         img.addEventListener("click", function() {
             modal.style.display = "block";
@@ -56,16 +48,29 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Ferme la modal en cliquant sur le X
-    closeBtn.onclick = function() {
-        modal.style.display = "none";
-    };
+    closeBtn.onclick = () => modal.style.display = "none";
 
-    // Ferme la modal en cliquant en dehors de l'image
-    window.onclick = function(event) {
+    window.onclick = event => {
         if (event.target === modal) {
             modal.style.display = "none";
         }
     };
-});
+}
 
+// Écouteurs d'événements
+document.addEventListener("DOMContentLoaded", () => {
+    toggleButton && toggleButton.addEventListener('click', /* logic for toggleButton */);
+    window.addEventListener('scroll', toggleScrollArrow);
+    scrollArrow.addEventListener('click', scrollToTop);
+    setupModal();
+
+    document.querySelectorAll('.show-description-btn').forEach((button, index) => {
+        button.textContent = `Prompt de l'Image ${index + 1}`;
+        
+        button.addEventListener('click', function() {
+            const imageContainer = this.closest('.image');
+            imageContainer.classList.toggle('show-description');
+        });
+    });
+    
+});
