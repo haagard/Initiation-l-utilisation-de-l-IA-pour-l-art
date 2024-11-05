@@ -488,4 +488,69 @@ nav ul li a:hover::after {
     background: #6d0d83; /* Changer la couleur au survol */
 }
 
+/* ==================================== */
+/* =========== R E S P O N S I V E =========== */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Taille de police de base plus petite pour mobile */
+    }
+
+    h2 {
+        font-size: 30px; /* Ajuster la taille des h2 */
+    }
+
+    .header-text {
+        font-size: 20px; /* Taille de texte de l'en-tête plus petite */
+    }
+
+    nav ul li {
+        margin: 10px; /* Ajuster l'espacement pour les petits écrans */
+        font-size: 18px; /* Taille de police plus petite pour les éléments de navigation */
+    }
+
+    .image img {
+        max-width: 100%; /* Rendre les images responsives */
+    }
+
+    .description {
+        font-size: 12px; /* Taille de texte plus petite pour la description */
+    }
+
+    .tab-titles {
+        flex-direction: column; /* Empiler les titres des onglets sur les petits écrans */
+        align-items: center;
+    }
+
+    .tab-links {
+        margin-right: 0; /* Supprimer la marge à droite */
+        margin-bottom: 10px; /* Ajouter de l'espace entre les liens d'onglets */
+    }
+
+    .tuto-list {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Colonnes plus petites */
+    }
+
+    .btn_tuto {
+        width: 100%; /* Bouton pleine largeur sur les petits écrans */
+        padding: 10px; /* Padding plus petit */
+    }
+}
+
+/* Styles pour tablette */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 18px; /* Ajuster la taille de la police de base pour les tablettes */
+    }
+
+    h2 {
+        font-size: 40px; /* Ajuster la taille des h2 */
+    }
+
+    nav ul li {
+        margin: 15px; /* Ajuster l'espacement pour les tablettes */
+        font-size: 20px; /* Ajuster la taille de la police */
+    }
+}
 
