@@ -1,3 +1,16 @@
+const admin = require('firebase-admin');
+
+// Chemin vers votre fichier de clés de service JSON
+const serviceAccount = require('../Js/initation-a-l-ia-firebase-adminsdk-23w76-fa6242d435.json');
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://initation-a-l-ia.firebaseapp.com/"
+});
+
+// Exemple d'accès à la base de données
+const db = admin.database();
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
