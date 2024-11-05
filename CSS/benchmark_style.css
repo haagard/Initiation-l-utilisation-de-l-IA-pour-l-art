@@ -59,9 +59,6 @@ span{
     transition: transform 0.3s ease; /* Transition pour l'effet de zoom */
 }
 
-.image-grid img:active {
-    transform: scale(1.3); /* Agrandir l'image au survol */
-}
 
 .Chatgpt {
     text-align: center; /* Centrer le texte de la div du milieu */
@@ -74,5 +71,35 @@ span{
     transform: scale(1.1); /* Agrandir l'image au survol */
 }
 
+/* ==================================== */
+/* ============ R E S P O N S I V E ============ */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    .fight {
+        flex-direction: column; /* Empiler les éléments sur les petits écrans */
+        align-items: center; /* Centrer les éléments */
+    }
+
+    .bing, .Leonardo, .Chatgpt {
+        width: 100%; /* Pleine largeur sur mobile */
+        margin-bottom: 20px; /* Garder l'espacement */
+    }
+
+    .benchmark_top {
+        font-size: 14px; /* Taille de police plus petite pour mobile */
+    }
+    
+    /* Ajustement de la grille pour les petits écrans */
+    .image-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .fight {
+        flex-direction: row; /* Afficher les éléments côte à côte pour les tablettes */
+    }
+}
 
 

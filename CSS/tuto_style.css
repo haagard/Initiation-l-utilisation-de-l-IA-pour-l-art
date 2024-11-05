@@ -44,9 +44,6 @@ body {
     transition: transform 0.3s ease; /* Transition pour l'effet de zoom */
 }
 
-.image-grid img:active {
-    transform: scale(1.1); /* Agrandir l'image au survol */
-}
 
 /* =========================== */
 /* ==== C A R R O U S E L === */
@@ -66,5 +63,38 @@ body {
     object-fit: cover; /* Garde le ratio sans déformer l'image */
 }
 
+/* ==================================== */
+/* ============ R E S P O N S I V E ============ */
+/* ==================================== */
 
+@media (max-width: 768px) {
+    .image_grid_panda img {
+        width: 100%; /* Pleine largeur sur mobile */
+    }
 
+    .image-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+
+    .carousel {
+        height: 250px; /* Ajuster la hauteur pour les petits écrans */
+    }
+
+    .carousel-inner img {
+        height: auto; /* Hauteur automatique pour garder les proportions */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .image_grid_panda img {
+        width: 48%; /* Ajustement de la largeur pour les tablettes */
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* Deux colonnes sur tablettes */
+    }
+
+    .carousel {
+        height: 300px; /* Ajuster la hauteur pour les tablettes */
+    }
+}
