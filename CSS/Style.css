@@ -53,7 +53,10 @@ h2 {
 
 #header {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh; /* S'assure qu'il couvre toute la vue sans bouger */
+    height: auto;
+    position: relative; /* Évite les déplacements si positionné en fixed */
+    overflow: hidden; /* Évite que le contenu dépasse */
     background-image: url("/images/background.webp");
     background-size: cover;
     background-position: center;
@@ -205,11 +208,10 @@ nav ul li a:hover::after {
     .section-inferieure {
         padding-top: 20px; /* Réduire le padding si nécessaire */
     }
-}
-.header-text h1 {
+    .header-text h1 {
     font-size: 36px; /* Réduire la taille de h1 pour mobile */
     margin: 10px 5px; /* Réduire la marge pour éviter le débordement */
-}
+    }
 
     .header-text {
         font-size: 20px; /* Taille de texte de l'en-tête plus petite */
@@ -270,6 +272,7 @@ nav ul li a:hover::after {
     .section-inferieure {
         padding-top: 40px; /* Ajustez cette valeur selon vos besoins */
     }
+}
 @media (max-width: 390px) {
     body {
         font-size: 16px; /* Réduire la taille de police */
