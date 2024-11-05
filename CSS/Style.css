@@ -195,21 +195,21 @@ nav ul li a:hover::after {
 /* ==================================== */
 
 @media (max-width: 768px) {
-    body {
-        font-size: 16px; /* Taille de police de base plus petite pour mobile */
-        margin: 0; /* Supprimer les marges pour un meilleur espacement */
-    }
-
-    h1 {
-        font-size: 36px; /* Ajuster la taille des h1 */
-        margin: 20px 0; /* Ajouter une marge au-dessus et en-dessous du titre h1 */
-        text-align: center; /* Centrer le texte pour mobile */
-    }
-
+    /* Ajuster la taille de h2 pour éviter le débordement */
     h2 {
-        font-size: 30px; /* Ajuster la taille des h2 */
-        margin: 20px 0; /* Ajouter une marge au-dessus et en-dessous du titre h2 */
+        font-size: 30px; /* Ajuster si nécessaire */
+        margin: 10px 0; /* Réduire les marges */
     }
+
+    /* Ajustement pour la section en dessous */
+    .section-inferieure {
+        padding-top: 20px; /* Réduire le padding si nécessaire */
+    }
+}
+.header-text h1 {
+    font-size: 36px; /* Réduire la taille de h1 pour mobile */
+    margin: 10px 5px; /* Réduire la marge pour éviter le débordement */
+}
 
     .header-text {
         font-size: 20px; /* Taille de texte de l'en-tête plus petite */
@@ -270,7 +270,66 @@ nav ul li a:hover::after {
     .section-inferieure {
         padding-top: 40px; /* Ajustez cette valeur selon vos besoins */
     }
+@media (max-width: 390px) {
+    body {
+        font-size: 16px; /* Réduire la taille de police */
+        padding: 0 10px; /* Ajouter du padding pour éviter le débordement */
+    }
+
+    h1 {
+        font-size: 32px; /* Taille réduite pour h1 */
+        margin: 20px 0; /* Ajuster les marges */
+        text-align: center; /* Centrer le titre */
+    }
+
+    h2 {
+        font-size: 28px; /* Taille réduite pour h2 */
+    }
+
+    .header-text h1 {
+        font-size: 28px; /* Taille de titre plus petite pour le mobile */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Réduire l'espacement vertical */
+        font-size: 16px; /* Police plus petite pour le menu */
+    }
+
+    .modal-content {
+        max-width: 95vw; /* Limiter la largeur à 95% de l'écran */
+    }
+
+    .image img, .tuto img {
+        max-width: 100%; /* Largeur pleine pour les images */
+        height: auto;
+    }
+
+    .layer_pres h3, .layer_tuto h3 {
+        font-size: 24px; /* Police réduite dans les couches */
+    }
+
+    .layer_tuto a, .btn_tuto {
+        width: 50px; /* Bouton plus petit */
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .description, .layer_tuto p {
+        font-size: 12px; /* Texte plus petit pour description */
+    }
+
+    /* Adaptation pour le footer */
+    #footer {
+        font-size: 14px; /* Police plus petite pour le footer */
+        padding: 20px 0;
+    }
+
+    /* Flèche de défilement plus petite */
+    #scroll-arrow {
+        padding: 8px; /* Réduire le padding */
+    }
 }
+
 
 /* Styles pour tablette */
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -398,6 +457,7 @@ nav ul li a:hover::after {
 }
 
 .layer_pres p {
+    background-color:#F5F5DC;
     font-size: 14px;
     font-weight: 400;
 }
