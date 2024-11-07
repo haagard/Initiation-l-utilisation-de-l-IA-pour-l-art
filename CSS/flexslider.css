@@ -266,11 +266,11 @@
   @media screen and (max-width: 860px) {
     .flex-direction-nav .flex-prev {
       opacity: 1;
-      left: 10px;
+      left: 5px;
     }
     .flex-direction-nav .flex-next {
       opacity: 1;
-      right: 10px;
+      right: 5px;
     }
   }
 @media screen and (max-width: 460px) {
@@ -290,7 +290,7 @@
   .flex-direction-nav a {
       width: 30px;
       height: 30px;
-      font-size: 25px;
+      font-size: 15px;
       top: 50%;
       margin: -15px 0 0;
       opacity: 0.8;
@@ -323,7 +323,7 @@
   /* Hide controls when not needed */
   .flexslider:hover .flex-direction-nav a {
       opacity: 1; /* Rendre les flèches visibles au survol */
-  }
+
 }
 
   

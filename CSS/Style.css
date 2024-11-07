@@ -396,6 +396,13 @@ nav ul li a:hover::after {
 /* ==================================== */
 /* ===== P R E S E N T A T I O N ====== */
 /* ==================================== */
+.container {
+    width: 100%;
+    max-width: 1200px; /* Ou la largeur souhaitée */
+    margin: auto;
+    position: relative;
+}
+
 
 .images-list {
     display: flex;
@@ -429,42 +436,67 @@ nav ul li a:hover::after {
 .description {
     margin: 0 10px; /* Ajoute un peu d'espace autour de la description */
 }
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Couleur semi-transparente */
+    z-index: 10; /* Assurez-vous que ce nombre est plus grand que les autres éléments */
+    display: block; /* Vérifiez que l'affichage n'est pas sur `none` */
+}
 
 /* Couche de description au survol */
-.layer_pres {
-    width: 35%;
-    height: 0;
-    border-radius: 10px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 50px;
-    padding: 0 20px;
+.layer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajustez la couleur selon vos besoins */
+    padding: 20px;
     text-align: center;
-    font-size: 14px;
-    transition: height 0.7s;
+    border-radius: 8px;
     display: none;
 }
 
-.image:hover .layer_pres {
-    height: 100%; /* Affiche la couche au survol */
+/* Cache le texte et affiche le bouton */
+.layer-text {
+    display: none; /* Cache le texte */
 }
 
+.layer-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3B2C20; /* Ajustez la couleur du bouton */
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.layer-button:hover {
+    background-color: #5a3c29; /* Couleur du bouton au survol */
+}
+
+.layer_pres {
+    display: none; /* Cacher par défaut */
+    text-align: center; /* Centrer le texte */
+    padding: 15px; /* Ajout d'un espace autour du texte */
+    border-radius: 8px; /* Coins arrondis */
+    max-width: 80%; /* Limite la largeur du texte */
+    margin: 10px auto; /* Centre le contenu horizontalement */
+}
 .layer_pres h3 {
-    font-weight: 500;
-    margin-bottom: 20px;
-    font-size: 45px;
+    font-size: 1.5em; /* Ajuste la taille du titre */
+    margin-bottom: 10px; /* Espace entre le titre et le texte */
 }
 
 .layer_pres p {
-    background-color:#F5F5DC;
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.5; /* Améliore la lisibilité */
+    max-width: 80%; /* Limite la largeur pour un meilleur rendu */
 }
 /* Afficher l'overlay lorsque le bouton est cliqué */
 .image.show-description .layer_pres {
@@ -474,28 +506,25 @@ nav ul li a:hover::after {
 
 /* Style du bouton */
 .show-description-btn {
-    margin: 10px 0;
-    display: none; /* Masqué par défaut */
-    position: absolute;
-    top: 10px; /* Utiliser top pour le placer au-dessus */
-    right: 10px; /* Optionnel : ajuste la position sur l'axe horizontal */
-    padding: 8px 15px;
-    font-size: 16px;
-    background-color: #333;
+    display: inline-block;
+    padding: 10px 15px;
+    background-color:#5a3c29;
     color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    z-index: 5;
+    font-size: 1em;
 }
 
-
-/* Afficher le bouton uniquement sur mobile */
-@media (max-width: 768px) {
+/* Optionnel : ajustements d'apparence en mode bureau */
+@media (min-width: 768px) {
     .show-description-btn {
-        display: block;
+        font-size: 1.1em;
+        padding: 12px 20px;
     }
 }
+
+
+    
 /* Styles pour les écrans mobiles */
 @media screen and (max-width: 430px) {
     .layer_pres {

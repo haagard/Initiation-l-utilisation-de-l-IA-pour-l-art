@@ -66,35 +66,36 @@ body {
 /* ==================================== */
 /* ============ R E S P O N S I V E ============ */
 /* ==================================== */
-
-@media (max-width: 768px) {
-    .image_grid_panda img {
-        width: 100%; /* Pleine largeur sur mobile */
-    }
-
-    .image-grid {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-    }
-
+@media (min-width: 1024px) {
     .carousel {
-        height: 250px; /* Ajuster la hauteur pour les petits écrans */
+        height: auto; /* Laisse la hauteur s'adapter */
+    }
+}
+@media (max-width: 375px) {
+    .carousel {
+        width: 100%; /* S'assurer que le carrousel prend toute la largeur */
+        height: auto; /* Laissez la hauteur s'ajuster automatiquement */
     }
 
-    .carousel-inner img {
-        height: auto; /* Hauteur automatique pour garder les proportions */
+    .carousel img {
+        width: 100%; /* Images s'ajustent à la largeur du carrousel */
+        height: auto; /* Hauteur automatique pour conserver le ratio */
+    }
+
+    .carousel .slide {
+        flex: 0 0 100%; /* Chaque diapositive prend 100% de la largeur */
+    }
+
+    /* Ajuster le style des boutons de navigation si nécessaire */
+    .carousel .prev, .carousel .next {
+        font-size: 16px; /* Ajuster la taille des boutons */
+        padding: 10px; /* Augmenter le padding pour le rendre plus cliquable */
+    }
+
+    /* Autres ajustements pour le texte ou la disposition */
+    .carousel .caption {
+        font-size: 14px; /* Ajuster la taille du texte */
+        padding: 5px; /* Ajouter un peu d'espace autour du texte */
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-    .image_grid_panda img {
-        width: 48%; /* Ajustement de la largeur pour les tablettes */
-    }
-
-    .image-grid {
-        grid-template-columns: repeat(2, 1fr); /* Deux colonnes sur tablettes */
-    }
-
-    .carousel {
-        height: 300px; /* Ajuster la hauteur pour les tablettes */
-    }
-}

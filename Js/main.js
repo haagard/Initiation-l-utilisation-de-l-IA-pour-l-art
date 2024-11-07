@@ -57,20 +57,55 @@ function setupModal() {
     };
 }
 
+// CSS pour gérer l'affichage du bouton et la description
+function addCSS() {
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .show-description-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color:#5a3c29;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        .show-description-btn:hover {
+            background-color: #3B2C20;
+        }
+
+        /* Cacher la description par défaut */
+        .layer-text {
+            display: none;
+        }
+
+        /* Afficher la description lorsque .show-description est active */
+        .image.show-description .layer-text {
+            display: block;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
 // Écouteurs d'événements
 document.addEventListener("DOMContentLoaded", () => {
-    toggleButton && toggleButton.addEventListener('click', /* logic for toggleButton */);
+    addCSS();  // Ajoute les styles CSS dynamiquement
+
+    toggleButton && toggleButton.addEventListener('click', /* logique du toggleButton */);
     window.addEventListener('scroll', toggleScrollArrow);
     scrollArrow.addEventListener('click', scrollToTop);
     setupModal();
 
+    // Gérer le bouton "Prompt de l'image" pour chaque image
     document.querySelectorAll('.show-description-btn').forEach((button, index) => {
         button.textContent = `Prompt de l'Image ${index + 1}`;
         
         button.addEventListener('click', function() {
             const imageContainer = this.closest('.image');
+            // Toggle pour afficher/masquer la description
             imageContainer.classList.toggle('show-description');
         });
     });
-    
 });
