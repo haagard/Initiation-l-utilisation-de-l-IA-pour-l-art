@@ -29,12 +29,16 @@ h1, h2, h3, p {
 }
 
 h2 {
-    font-size: 50px;
+    font-size: 35px;
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: underline #6d0d83;
     text-decoration-thickness: 3px;
     text-underline-offset: 5px;
+}
+h3{
+    text-decoration: underline;
+    font-size: 30px;
 }
 .sub-title {
     display: flex; /* Assurez-vous que l'élément est un conteneur flex */
