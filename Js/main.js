@@ -57,18 +57,4 @@ function setupModal() {
     };
 }
 
-// Écouteurs d'événements
-document.addEventListener("DOMContentLoaded", () => {
 
-    toggleButton && toggleButton.addEventListener('click', /* logique du toggleButton */);
-    window.addEventListener('scroll', toggleScrollArrow);
-    scrollArrow.addEventListener('click', scrollToTop);
-    setupModal();
-
-        
-        button.addEventListener('click', function() {
-            const imageContainer = this.closest('.image');
-            // Toggle pour afficher/masquer la description
-            imageContainer.classList.toggle('show-description');
-        });
-    });
