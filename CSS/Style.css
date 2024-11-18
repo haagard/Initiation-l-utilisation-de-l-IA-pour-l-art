@@ -3,16 +3,15 @@
 
 /* Styles de base */
 * {
-    margin: 10;
-    padding: 10;
+    margin: 0;
+    padding:0px;
     box-sizing: border-box;
 }
 .container {
     width: 100%; /* Utilise toute la largeur */
     max-width: 1400px;
-    padding: 0 5%; /* Ajoute un padding pour centrer un peu le contenu */
+    padding: 10px 5%; /* Ajoute un padding pour centrer un peu le contenu */
 }
-
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #F5F5DC;
@@ -451,6 +450,10 @@ nav ul li a:hover::after {
 .images-list div {
     clear: both;
     max width: 400px;
+}
+.images-list{
+    padding: 10px;
+
 }
 
 /* =========================== */
