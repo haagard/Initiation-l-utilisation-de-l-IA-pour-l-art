@@ -64,38 +64,98 @@ body {
 }
 
 /* ==================================== */
-/* ============ R E S P O N S I V E ============ */
+/* ===== RENDRE RESPONSIVE ===== */
 /* ==================================== */
-@media (min-width: 1024px) {
+
+@media (max-width: 1200px) {
+    .container ul, li, strong, em {
+        margin: 0;
+        padding: 0;
+    }
+
+    .screen_panda {
+        width: 100%; /* S'assurer que l'image occupe toute la largeur */
+    }
+
+    .image_grid_panda img {
+        width: 48%; /* Garder la largeur à 48% pour deux images côte à côte */
+        margin-bottom: 10px;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur les grands écrans */
+    }
+
     .carousel {
-        height: auto; /* Laisse la hauteur s'adapter */
+        width: 95%;
+        max-width: 700px;
+        margin: 0 auto;
     }
 }
-@media (max-width: 375px) {
+
+@media (max-width: 992px) {
+    .screen_panda {
+        width: 100%; /* Pour les tablettes, utiliser 100% de la largeur */
+    }
+
+    .image_grid_panda img {
+        width: 45%; /* Réduire légèrement la largeur des images */
+        margin-bottom: 15px;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    }
+
     .carousel {
-        width: 100%; /* S'assurer que le carrousel prend toute la largeur */
-        height: auto; /* Laissez la hauteur s'ajuster automatiquement */
-    }
-
-    .carousel img {
-        width: 100%; /* Images s'ajustent à la largeur du carrousel */
-        height: auto; /* Hauteur automatique pour conserver le ratio */
-    }
-
-    .carousel .slide {
-        flex: 0 0 100%; /* Chaque diapositive prend 100% de la largeur */
-    }
-
-    /* Ajuster le style des boutons de navigation si nécessaire */
-    .carousel .prev, .carousel .next {
-        font-size: 16px; /* Ajuster la taille des boutons */
-        padding: 10px; /* Augmenter le padding pour le rendre plus cliquable */
-    }
-
-    /* Autres ajustements pour le texte ou la disposition */
-    .carousel .caption {
-        font-size: 14px; /* Ajuster la taille du texte */
-        padding: 5px; /* Ajouter un peu d'espace autour du texte */
+        width: 100%;
+        max-width: 600px;
     }
 }
+
+@media (max-width: 768px) {
+    .screen_panda {
+        width: 100%; /* Full-width pour les tablettes et petits écrans */
+    }
+
+    .image_grid_panda img {
+        width: 100%; /* Passer à une seule image par ligne */
+        margin-bottom: 10px;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+
+    .carousel {
+        width: 100%;
+        height: 300px; /* Ajuster la hauteur pour mobile */
+        max-width: 100%;
+    }
+
+    .carousel-inner img {
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 576px) {
+    .screen_panda {
+        width: 100%; /* Pour les très petits écrans, occuper toute la largeur */
+    }
+
+    .image_grid_panda img {
+        width: 100%; /* Une seule image par ligne */
+        margin-bottom: 10px;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+
+    .carousel {
+        width: 100%;
+        height: 250px; /* Réduire la taille pour les petits écrans */
+    }
+}
+
 

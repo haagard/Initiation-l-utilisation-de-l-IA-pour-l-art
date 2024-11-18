@@ -3,8 +3,8 @@
 
 /* Styles de base */
 * {
-    margin: 0;
-    padding: 0;
+    margin: 10;
+    padding: 10;
     box-sizing: border-box;
 }
 .container {
@@ -240,207 +240,161 @@ nav ul li a:hover::after {
 }
 
 /* ==================================== */
-/* =========== R E S P O N S I V E =========== */
+/* ===== RESPONSIVE ===== */
 /* ==================================== */
 
-@media (max-width: 768px) {
-    /* Ajuster la taille de h2 pour éviter le débordement */
-    h2 {
-        font-size: 30px; /* Ajuster si nécessaire */
-        margin: 10px 0; /* Réduire les marges */
-    }
-
-    /* Ajustement pour la section en dessous */
-    .section-inferieure {
-        padding-top: 20px; /* Réduire le padding si nécessaire */
-    }
-    .header-text h1 {
-    font-size: 36px; /* Réduire la taille de h1 pour mobile */
-    margin: 10px 5px; /* Réduire la marge pour éviter le débordement */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 3%;
     }
 
     .header-text {
-        font-size: 20px; /* Taille de texte de l'en-tête plus petite */
+        width: 90%; /* Réduit la largeur du conteneur */
         padding: 15px;
-        text-align: center; /* Centrer le texte pour mobile */
+        overflow: hidden;
     }
 
     nav ul {
-        flex-direction: column; /* Empiler les éléments de navigation */
-        align-items: center; /* Centrer les éléments */
+        flex-direction: column;
+        margin-top: 10px;
     }
 
     nav ul li {
-        margin: 10px 5px; /* Ajuster l'espacement pour les petits écrans */
-        font-size: 18px; /* Taille de police plus petite pour les éléments de navigation */
+        margin: 10px 0;
     }
 
-    .image {
-        margin-top: 20px; /* Ajouter une marge au-dessus de l'image pour éviter la superposition */
-    }
-
-    .image img {
-        max-width: 100%; /* Rendre les images responsives */
-        height: auto; /* Maintenir le ratio d'aspect */
-    }
-
-    .description {
-        font-size: 12px; /* Taille de texte plus petite pour la description */
-        text-align: center; /* Centrer le texte */
-    }
-
-    .layer_pres h3 {
-        font-size: 14px; /* Ajuster la taille des titres dans les couches */
-    }
-
-    .tab-titles {
-        flex-direction: column; /* Empiler les titres des onglets sur les petits écrans */
-        align-items: center; /* Centrer les éléments */
-    }
-
-    .tab-links {
-        margin-right: 0; /* Supprimer la marge à droite */
-        margin-bottom: 10px; /* Ajouter de l'espace entre les liens d'onglets */
-    }
-
-    .tuto-list {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Colonnes plus petites */
-        justify-items: center; /* Centrer les éléments */
-    }
-
-    .btn_tuto {
-        width: 100%; /* Bouton pleine largeur sur les petits écrans */
-        padding: 10px; /* Padding plus petit */
-        text-align: center; /* Centrer le texte du bouton */
-    }
-
-    /* Ajoutez un padding à la section inférieure pour éviter le débordement */
-    .section-inferieure {
-        padding-top: 40px; /* Ajustez cette valeur selon vos besoins */
-    }
-}
-@media (max-width: 390px) {
-    body {
-        font-size: 16px; /* Réduire la taille de police */
-        padding: 0 15px; /* Ajouter un peu plus d'espace sur les côtés */
-    }
-    .description {
-        font-size: 14px; /* Ajuster la taille du texte de description */
-    }
-
-    h1 {
-        font-size: 32px; /* Taille réduite pour h1 */
-        margin: 20px 0; /* Ajuster les marges */
-        text-align: center; /* Centrer le titre */
-    }
-
-    h2 {
-        font-size: 28px; /* Taille réduite pour h2 */
+    nav ul li a {
+        font-size: 22px;
     }
 
     .header-text h1 {
-        font-size: 28px; /* Taille de titre plus petite pour le mobile */
+        font-size: 35px;
+    }
+
+    .header-text h1 span {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 992px) {
+    #header {
+        padding: 0 5%; /* Ajuste le padding pour les écrans moyens */
+    }
+
+    .header-text h1 {
+        font-size: 30px;
+    }
+
+    .header-text {
+        font-size: 22px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
     }
 
     nav ul li {
-        margin: 5px 0; /* Réduire l'espacement vertical */
-        font-size: 16px; /* Police plus petite pour le menu */
+        margin: 15px 0;
+    }
+
+    .images-list img {
+        width: 100%; /* Les images prennent toute la largeur de l'écran */
+        max-width: 100%; /* Adaptation à la taille de l'écran */
+    }
+
+    .tuto-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
     .modal-content {
-        max-width: 95vw; /* Limiter la largeur à 95% de l'écran */
-    }
-
-    .image img, .tuto img {
-        max-width: 100%; /* Largeur pleine pour les images */
-        height: auto;
-    }
-
-    .layer_pres h3, .layer_tuto h3 {
-        font-size: 24px; /* Police réduite dans les couches */
-    }
-
-    .layer_tuto a, .btn_tuto {
-        width: 50px; /* Bouton plus petit */
-        height: 50px;
-        font-size: 16px;
-    }
-
-    .description, .layer_tuto p {
-        font-size: 12px; /* Texte plus petit pour description */
-    }
-
-    /* Adaptation pour le footer */
-    #footer {
-        font-size: 14px; /* Police plus petite pour le footer */
-        padding: 20px 0;
-    }
-
-    /* Flèche de défilement plus petite */
-    #scroll-arrow {
-        padding: 8px; /* Réduire le padding */
-    }
-    .image-container {
-        margin-bottom: 5px; /* Réduire la marge pour les petits écrans */
+        width: 80%;
+        max-width: 80vw;
     }
 }
 
-
-/* Styles pour tablette */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (max-width: 768px) {
     body {
-        font-size: 18px; /* Ajuster la taille de la police de base pour les tablettes */
+        padding-top: 50px; /* Réduit le padding pour plus d'espace sur petits écrans */
     }
 
-    h1 {
-        font-size: 48px; /* Ajuster la taille des h1 pour les tablettes */
-        margin: 30px 0; /* Ajouter une marge au-dessus et en-dessous du titre h1 pour les tablettes */
-        text-align: left; /* Alignement à gauche pour les tablettes */
-    }
-
-    h2 {
-        font-size: 40px; /* Ajuster la taille des h2 */
-        margin: 30px 0; /* Ajouter une marge au-dessus et en-dessous du titre h2 pour les tablettes */
-    }
-
-    .header-text {
-        text-align: left; /* Alignement à gauche pour les tablettes */
-    }
-
-    nav ul {
-        display: flex; /* Flexbox pour un affichage en ligne */
-        justify-content: center; /* Centrer les éléments */
+    .header-text h1 {
+        font-size: 28px;
     }
 
     nav ul li {
-        margin: 15px; /* Ajuster l'espacement pour les tablettes */
-        font-size: 20px; /* Ajuster la taille de la police */
+        margin: 10px 0;
+        font-size: 20px;
     }
 
-    .image {
-        margin-top: 30px; /* Ajouter une marge au-dessus de l'image pour éviter la superposition */
+    .images-list p {
+        font-size: 16px;
     }
 
-    .image img {
-        max-width: 90%; /* Légère réduction de la taille des images */
-        margin: auto; /* Centrer les images */
+    .images-list h3 {
+        font-size: 22px;
     }
 
-    .description {
-        font-size: 14px; /* Ajuster la taille du texte de description */
+    .tab-titles {
+        flex-direction: column;
+        margin-bottom: 30px;
     }
 
-    .layer_pres h3 {
-        font-size: 16px; /* Ajuster la taille des titres dans les couches */
+    .btn_benchmark,
+    .btn_tuto {
+        width: 100%; /* Les boutons prennent toute la largeur */
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-text h1 {
+        font-size: 25px;
+    }
+
+    .header-text {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    nav ul li {
+        font-size: 18px;
+    }
+
+    .images-list img {
+        width: 100%; /* Les images sont ajustées */
+        height: auto;
+    }
+
+    .images-list p {
+        font-size: 14px;
+    }
+
+    .images-list h3 {
+        font-size: 20px;
     }
 
     .tuto-list {
-        grid-template-columns: repeat(2, 1fr); /* Deux colonnes sur les tablettes */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Réduit la taille des tutoriels */
     }
 
-    /* Ajoutez un padding à la section inférieure pour éviter le débordement */
-    .section-inferieure {
-        padding-top: 60px; /* Ajustez cette valeur selon vos besoins */
+    .btn_benchmark,
+    .btn_tuto {
+        width: 90%; /* Boutons prennent presque toute la largeur */
+        font-size: 16px;
+    }
+
+    #scroll-arrow {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px;
+    }
+
+    .modal-content {
+        width: 90%;
     }
 }
 
@@ -468,18 +422,15 @@ nav ul li a:hover::after {
     font-size: 24px;
 }
 .images-list div:nth-child(even) {
-    background-color:#3B2C20; /* Couleur de fond */
     overflow: hidden; /* Cache les débordements si nécessaires */
     position: relative; /* Utile pour un meilleur contrôle */
-    p ,h3,a {
-        color: #F5F5DC;
-    }
+    border-style: double solid;
 }
 
 .images-list img {
     width: 100%; /* Adapte l'image à la largeur du conteneur */
     max-width: 400px; /* Limite la largeur maximale */
-    max-height: 100%; /* Évite que l'image dépasse en hauteur */
+    max-height: 400px; /* Évite que l'image dépasse en hauteur */
     border-radius: 10px;
     transition: transform 0.7s; /* Ajoute un effet fluide */
     transform-origin: bottom left;
@@ -488,17 +439,18 @@ nav ul li a:hover::after {
 
 .img_right {
     float: right;
-    margin-left: 20px; /* Ajoute de l'espace entre l'image et le texte */
+    margin: 20px; /* Ajoute de l'espace entre l'image et le texte */
 }
 
 .img_left {
     float: left;
-    margin-right: 20px; /* Ajoute de l'espace entre l'image et le texte */
+    margin: 20px; /* Ajoute de l'espace entre l'image et le texte */
 }
 
 /* Assurez-vous que les éléments flottants ne chevauchent pas */
 .images-list div {
     clear: both;
+    max width: 400px;
 }
 
 /* =========================== */

@@ -57,4 +57,12 @@ function setupModal() {
     };
 }
 
+// Écouteurs d'événements
+document.addEventListener("DOMContentLoaded", () => {
+    toggleButton && toggleButton.addEventListener('click', /* logic for toggleButton */);
+    window.addEventListener('scroll', toggleScrollArrow);
+    scrollArrow.addEventListener('click', scrollToTop);
+    setupModal();
 
+    
+});
