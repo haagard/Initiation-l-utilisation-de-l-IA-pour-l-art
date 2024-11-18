@@ -7,6 +7,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+.container {
+    width: 100%; /* Utilise toute la largeur */
+    max-width: 1400px;
+    padding: 0 5%; /* Ajoute un padding pour centrer un peu le contenu */
+}
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -14,7 +19,9 @@ body {
     color: #3B2C20;
     height: auto; /* Permettre la hauteur automatique */
     min-height: 100vh; /* S'assurer que le fond s'étend sur toute la page */
+    padding-top: 70px; /* Décale le contenu pour ne pas être caché par la nav fixe */
 }
+
 
 h1, h2, h3, p {
     margin: 1em;
@@ -29,67 +36,101 @@ h2 {
     text-decoration-thickness: 3px;
     text-underline-offset: 5px;
 }
+.sub-title {
+    display: flex; /* Assurez-vous que l'élément est un conteneur flex */
+    justify-content: center; /* Centre les éléments enfants horizontalement */
+    align-items: center; /* Centre les éléments enfants verticalement (si nécessaire) */
+}
+img {
+    transition: transform 0.3s ease; /* Transition fluide pour l'agrandissement */
+}
+
+
+
+
 
 /* ==================================== */
 /* ===== H E A D E R ====== */
+/* ==================================== */
+#header {
+    width: 100%; /* S'assure que le fond couvre toute la largeur */
+    min-height: 100vh; /* Prend toute la hauteur de l'écran */
+    height: auto; /* Permet au fond de s'adapter à la taille */
+    overflow: hidden;
+    background-image: url("/images/background.webp");
+    background-size: cover;
+    background-position: center;
+    display: flex; /* Utilisation de flexbox */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    flex-direction: column; /* Aligner les éléments en colonne */
+}
+
+/* ==================================== */
+/* ===== .header-text ===== */
 /* ==================================== */
 .header-text {
     background-color: #F5F5DC;
     padding: 20px; /* Ajout de padding */
     border-radius: 10px; /* Coins arrondis */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Légère ombre pour le relief */
-    margin-top: 20%; /* Ajout d'une marge en haut */
     font-size: 25px;
+    text-align: center; /* Centrer le texte */
+    display: flex; /* Utilisation de flexbox pour centrer le contenu interne */
+    flex-direction: column; /* Alignement vertical du contenu */
+    justify-content: center; /* Centrage vertical */
+    align-items: center; /* Centrage horizontal */
+    margin-top: 0; /* Enlever la marge en haut */
 }
 
+/* Titre principal */
 .header-text h1 {
     font-size: 40px;
     margin-top: 20px;
 }
 
+/* Partie colorée du titre */
 .header-text h1 span {
     color: #bc15e1; /* Couleur d'accent pour une partie du titre */
 }
 
-#header {
-    width: 100%;
-    min-height: 100vh; /* S'assure qu'il couvre toute la vue sans bouger */
-    height: auto;
-    position: relative; /* Évite les déplacements si positionné en fixed */
-    overflow: hidden; /* Évite que le contenu dépasse */
-    background-image: url("/images/background.webp");
+/* ==================================== */
+/* ===== NAV ===== */
+/* ==================================== */
+nav {
+    position: absolute; /* Permet à la nav d'être en haut de la page sans être fixe */
+    top: 0; /* La nav sera positionnée tout en haut de la page */
+    left: 0;
+    right: 0;
+    width: 100%; /* Ajustez cette valeur selon la largeur désirée */
+    margin: 0 auto; /* Centrer horizontalement */ 
+    margin: 0 auto; /* Centrer horizontalement */
+    padding: 10px 20px;
+    text-align: center; /* Centrer le contenu dans la nav */
+    z-index: 1000; /* S'assurer que la nav est au-dessus d'autres éléments */
+    background-image: url(/images/background.webp);
     background-size: cover;
     background-position: center;
 }
 
-.container {
-    padding: 10px 10%;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
 nav ul {
-    padding: 0; /* Supprimer le padding par défaut */
-    list-style: none; /* Enlever les puces */
+    padding: 0;
+    list-style: none;
+    display: flex;
 }
 
 nav ul li {
     display: inline-block;
-    margin: 12px 20px;
-    border: 3px solid #3B2C20; /* Bordure colorée */
+    margin: 0 20px;
+    border: 3px solid #F5F5DC;
     padding: 7px 15px;
     border-radius: 6px;
-    background-color: #F5F5DC; /* Fond du menu */
-    transition: background 0.7s; /* Transition pour le fond */
+    background-color: #F5F5DC;
+    transition: background 0.7s;
 }
 
 nav ul li a {
-    color: #3B2C20; /* Couleur de texte du menu */
+    color: #3B2C20;
     text-decoration: none;
     font-size: 24px;
     position: relative;
@@ -99,16 +140,17 @@ nav ul li a::after {
     content: '';
     width: 0;
     height: 3px;
-    background: #bc15e1; /* Couleur de soulignement */
+    background: #bc15e1;
     position: absolute;
     left: 0;
     bottom: -6px;
-    transition: width 0.5s; /* Transition douce */
+    transition: width 0.5s;
 }
 
 nav ul li a:hover::after {
     width: 100%; /* Animation de soulignement au survol */
 }
+
 /* ==================================== */
 /* =========== F O O T E R =========== */
 /* ==================================== */
@@ -174,7 +216,7 @@ nav ul li a:hover::after {
     position: absolute;
     top: 15px;
     right: 35px;
-    color: white;
+    color: red;
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
@@ -276,7 +318,10 @@ nav ul li a:hover::after {
 @media (max-width: 390px) {
     body {
         font-size: 16px; /* Réduire la taille de police */
-        padding: 0 10px; /* Ajouter du padding pour éviter le débordement */
+        padding: 0 15px; /* Ajouter un peu plus d'espace sur les côtés */
+    }
+    .description {
+        font-size: 14px; /* Ajuster la taille du texte de description */
     }
 
     h1 {
@@ -330,6 +375,9 @@ nav ul li a:hover::after {
     /* Flèche de défilement plus petite */
     #scroll-arrow {
         padding: 8px; /* Réduire le padding */
+    }
+    .image-container {
+        margin-bottom: 5px; /* Réduire la marge pour les petits écrans */
     }
 }
 
@@ -392,182 +440,70 @@ nav ul li a:hover::after {
     }
 }
 
+/* ==================================== */
+/* ===== I N T R O D U C T I O N ====== */
+/* ==================================== */
+#intro{
+    justify-content: center; /* Centre les éléments enfants horizontalement */
+    align-items: center; /* Centre les éléments enfants verticalement (si nécessaire) */
+}
+#intro strong{
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+}
 
 /* ==================================== */
 /* ===== P R E S E N T A T I O N ====== */
 /* ==================================== */
-.container {
-    width: 100%;
-    max-width: 1200px; /* Ou la largeur souhaitée */
-    margin: auto;
-    position: relative;
+.images-list p {
+    font-size: 18px;
+}
+.images-list h3 {
+    text-decoration: underline;
+    font-size: 24px;
+}
+.images-list div:nth-child(even) {
+    background-color:#3B2C20; /* Couleur de fond */
+    overflow: hidden; /* Cache les débordements si nécessaires */
+    position: relative; /* Utile pour un meilleur contrôle */
+    p ,h3,a {
+        color: #F5F5DC;
+    }
 }
 
-
-.images-list {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    margin-bottom: 50px;
-}
-
-.image {
-    position: relative; 
-    display: flex; 
-    flex-direction: column; /* Colonne pour empiler l'image et la description */
-    align-items: center; /* Centrer le contenu */
-    text-align: center; /* Centrer le texte */
-}
-
-.image-container {
-    display: flex;
-    justify-content: center; /* Centre l'image horizontalement */
-    margin-bottom: 10px; /* Ajoute de l'espace entre l'image et la description */
-}
-
-.image img {
-    width: 100%;
-    max-width: 500px; /* Limite la largeur des images */
+.images-list img {
+    width: 100%; /* Adapte l'image à la largeur du conteneur */
+    max-width: 400px; /* Limite la largeur maximale */
+    max-height: 100%; /* Évite que l'image dépasse en hauteur */
     border-radius: 10px;
-    transition: transform 0.7s;
+    transition: transform 0.7s; /* Ajoute un effet fluide */
     transform-origin: bottom left;
+    object-fit: cover; /* Ajuste l'image pour remplir sans déformer */
 }
 
-.description {
-    margin: 0 10px; /* Ajoute un peu d'espace autour de la description */
-}
-.layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Couleur semi-transparente */
-    z-index: 10; /* Assurez-vous que ce nombre est plus grand que les autres éléments */
-    display: block; /* Vérifiez que l'affichage n'est pas sur `none` */
+.img_right {
+    float: right;
+    margin-left: 20px; /* Ajoute de l'espace entre l'image et le texte */
 }
 
-/* Couche de description au survol */
-.layer {
-    position: relative;
-    width: 100%;
-    height: auto;
-    background-color: rgba(0, 0, 0, 0.5); /* Ajustez la couleur selon vos besoins */
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-    display: none;
+.img_left {
+    float: left;
+    margin-right: 20px; /* Ajoute de l'espace entre l'image et le texte */
 }
 
-/* Cache le texte et affiche le bouton */
-.layer-text {
-    display: none; /* Cache le texte */
+/* Assurez-vous que les éléments flottants ne chevauchent pas */
+.images-list div {
+    clear: both;
 }
-
-.layer-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #3B2C20; /* Ajustez la couleur du bouton */
-    color: #FFF;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.layer-button:hover {
-    background-color: #5a3c29; /* Couleur du bouton au survol */
-}
-
-.layer_pres {
-    display: none; /* Cacher par défaut */
-    text-align: center; /* Centrer le texte */
-    padding: 15px; /* Ajout d'un espace autour du texte */
-    border-radius: 8px; /* Coins arrondis */
-    max-width: 80%; /* Limite la largeur du texte */
-    margin: 10px auto; /* Centre le contenu horizontalement */
-}
-.layer_pres h3 {
-    font-size: 1.5em; /* Ajuste la taille du titre */
-    margin-bottom: 10px; /* Espace entre le titre et le texte */
-}
-
-.layer_pres p {
-    font-size: 1em;
-    line-height: 1.5; /* Améliore la lisibilité */
-    max-width: 80%; /* Limite la largeur pour un meilleur rendu */
-}
-/* Afficher l'overlay lorsque le bouton est cliqué */
-.image.show-description .layer_pres {
-    display: flex; /* Affiche la description */
-    height: 100%;
-}
-
-/* Style du bouton */
-.show-description-btn {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color:#5a3c29;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-/* Optionnel : ajustements d'apparence en mode bureau */
-@media (min-width: 768px) {
-    .show-description-btn {
-        font-size: 1.1em;
-        padding: 12px 20px;
-    }
-}
-
-
-    
-/* Styles pour les écrans mobiles */
-@media screen and (max-width: 430px) {
-    .layer_pres {
-        width: auto;
-        height: auto;
-        padding: 10px;
-        background-color: #F5F5DC;
-        border-radius: 10px;
-        bottom: 10px; /* Positionner en bas de l'image */
-        opacity: 1; /* Afficher directement le bouton */
-        cursor: pointer;
-        transition: transform 0.3s; /* Animation de clic */
-        margin-bottom: 10px;
-    }
-
-    .image:hover .layer_pres {
-        height: auto; /* Désactiver l'animation de survol sur mobile */
-    }
-
-    .layer_pres h3 {
-        font-size: 20px; /* Ajuster la taille pour mobile */
-    }
-
-    .layer_pres p {
-        font-size: 12px;
-    }
-}
-
-/* Desktop - Rétablir le comportement d'overlay au survol */
-@media screen and (min-width: 431px) {
-    .image:hover .layer_pres {
-        height: 100%; /* Affiche l'overlay au survol */
-    }
-}
-
 
 /* =========================== */
 /* ==== B E N C H M A R K === */
 /* =========================== */
-
 .tab-titles {
     display: flex;
     margin: 20px 0 40px;
+    justify-content: center;
 }
 
 .tab-links {
@@ -609,6 +545,23 @@ nav ul li a:hover::after {
 
 .tab-contents ul li span {
     color: #6d0d83; /* Couleur d'accent pour le texte dans les contenus d'onglet */
+}
+.btn_benchmark {
+    display: block;
+    margin: 50px auto;
+    width: 300px; /* Largeur fixe pour cohérence */
+    padding: 15px;
+    border: 3px solid #6d0d83;
+    border-radius: 6px;
+    text-decoration: none;
+    background-color: #3B2C20;
+    color: #F5F5DC;
+    font-size: 18px;
+    text-align: center;
+    transition: background 0.7s;
+}
+.btn_benchmark:hover {
+    background: #6d0d83; /* Changer la couleur au survol */
 }
 
 /* ==================================== */
@@ -702,7 +655,7 @@ nav ul li a:hover::after {
 .btn_tuto {
     display: block;
     margin: 50px auto;
-    width: 150px; /* Largeur fixe pour cohérence */
+    width: 300px; /* Largeur fixe pour cohérence */
     padding: 15px;
     border: 3px solid #6d0d83;
     border-radius: 6px;

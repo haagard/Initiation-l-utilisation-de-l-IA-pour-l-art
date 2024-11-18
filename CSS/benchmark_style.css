@@ -28,6 +28,36 @@ body {
     line-height: 1.6; /* Améliore la lisibilité en augmentant l'espacement entre les lignes */
 }
 
+
+.comparison-table {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-table th, .comparison-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.comparison-table th {
+    background-color:#3B2C20;
+    color: white;
+}
+
+.comparison-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.comparison-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+
 span{
     font-weight: bold;
     color: #6d0d83;
