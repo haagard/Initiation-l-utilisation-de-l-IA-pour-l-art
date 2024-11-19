@@ -11,6 +11,7 @@
     width: 100%; /* Utilise toute la largeur */
     max-width: 1400px;
     padding: 10px 5%; /* Ajoute un padding pour centrer un peu le contenu */
+    margin-left: 15%;
 }
 body {
     font-family: 'Poppins', sans-serif;
@@ -238,15 +239,37 @@ nav ul li a:hover::after {
     padding: 10px 20px;
 }
 
+/* ===================================== */
+/* === I M A G E   Z O O M === */
+/* ===================================== */
+/* Appliquer la modification du curseur sur l'image */
+.zoom {
+    cursor: zoom-in; /* Changer le curseur en loupe */
+}
+
+/* Icône Font Awesome au survol */
+.zoom:hover::after {
+    content: "\f00e"; /* Code Unicode pour l'icône "search-plus" (loupe) */
+    font-family: "Font Awesome 5 Free"; /* Font Awesome */
+    font-weight: 900; /* Style solide */
+    font-size: 2rem; /* Taille de l'icône */
+    color: rgba(0, 0, 0, 0.7); /* Couleur de l'icône */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrer l'icône */
+    opacity: 1; /* Icône visible au survol */
+    pointer-events: none; /* Empêcher les interactions avec l'icône */
+    transition: opacity 0.3s ease; /* Transition fluide pour l'apparition */
+}
+
+
+
 /* ==================================== */
 /* ===== RESPONSIVE ===== */
 /* ==================================== */
 
 @media (max-width: 1200px) {
-    .container {
-        padding: 0 3%;
-    }
-
     .header-text {
         width: 90%; /* Réduit la largeur du conteneur */
         padding: 15px;
