@@ -15,7 +15,7 @@ body {
     height: 100vh; /* S'assurer que le fond s'étend sur toute la page */
     color: #3B2C20; /* Couleur de texte marron foncé */
 }
-img:hover {
+.ihover:hover {
     transform: scale(1.2, 1.2); /* Agrandit l'image de 10% sur les deux axes */
     transition: transform 0.3s ease; /* Ajoute une transition fluide */
 }
