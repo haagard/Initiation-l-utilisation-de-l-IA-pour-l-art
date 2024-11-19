@@ -19,17 +19,6 @@ img:hover {
     transform: scale(1.2,); /* Agrandit l'image de 10% sur les deux axes */
     transition: transform 0.3s ease; /* Ajoute une transition fluide */
 }
-.page-container {
-    text-align: center; /* Centrer le texte */
-    width: 90%; /* Ajuster la largeur */
-    max-width: 800px; /* Largeur maximale */
-    padding: 20px; /* Espace intérieur */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optionnel : ajouter une ombre */
-    background-color: #fff; /* Optionnel : fond blanc */
-    border-radius: 8px; /* Coins arrondis */
-}
-
-
 /* =========================== */
 /* ==== B E N C H M A R K === */
 /* =========================== */
