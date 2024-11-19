@@ -663,28 +663,4 @@ nav ul li a:hover::after {
     background: #6d0d83; /* Changer la couleur au survol */
 }
 
-/* ==================================== */
-/* ======== G R O U P E ======== */
-/* ==================================== */
-.groupe-list {
-    display: flex;
-    flex-wrap: wrap;
-}
-.groupe-list li {
-    width: 45%; 
-    margin-right: 5%; 
-    margin-bottom: 10px; 
-    display: flex;
-    align-items: flex-start; 
-}
-.groupe-list li:nth-child(odd) {
-    margin-right: 0; 
-}
-.groupe-list li a {
-    align-self: center; 
-}
-.Groupe img{
-    max-width: 100px;
-    max-height: 100px;
-    margin-right: 10px; 
-}
+

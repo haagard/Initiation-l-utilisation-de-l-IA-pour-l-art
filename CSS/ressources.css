@@ -1,0 +1,54 @@
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins&display=swap');
+
+/* Styles de base */
+* {
+    margin: 15px;
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    /* Couleur de fond */
+    background-color: #F5F5DC; /* Beige clair */
+    height: 100vh; /* S'assurer que le fond s'étend sur toute la page */
+    color: #3B2C20; /* Couleur de texte marron foncé */
+}
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%; /* Utilise toute la largeur disponible */
+    max-width: 1000px;
+    margin: 0 auto; /* Centre horizontalement */
+    padding: 10px; /* Ajoute un espace intérieur */
+}
+/* ==================================== */
+/* ======== G R O U P E ======== */
+/* ==================================== */
+.screen_trello{
+    width: 96.3%;
+}
+.groupe-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.groupe-list li {
+    width: 45%; 
+    margin-right: 5%; 
+    margin-bottom: 10px; 
+    display: flex;
+    align-items: flex-start; 
+}
+.groupe-list li:nth-child(odd) {
+    margin-right: 0; 
+}
+.groupe-list li a {
+    align-self: center; 
+}
+.groupe-list img{
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 10px; 
+}
