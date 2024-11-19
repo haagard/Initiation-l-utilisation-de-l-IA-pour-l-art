@@ -108,6 +108,7 @@ span{
 /* ===== RESPONSIVE ===== */
 /* ==================================== */
 
+/* Tablette et au-dessus : 1200px max */
 @media (max-width: 1200px) {
     .benchmark_top {
         font-size: 14px;
@@ -130,12 +131,12 @@ span{
     }
 
     .bing, .Leonardo, .Chatgpt {
-        width: 100%; /* Les divs prennent toute la largeur */
-        margin-bottom: 15px; /* Espacement réduit */
+        width: 100%;
+        margin-bottom: 15px;
     }
 
     .image-grid {
-        grid-template-columns: 1fr; /* 1 seule colonne */
+        grid-template-columns: 1fr; /* 1 seule colonne d'images */
         margin-top: 20px;
     }
 
@@ -149,6 +150,7 @@ span{
     }
 }
 
+/* Tablette et plus petit : 992px max */
 @media (max-width: 992px) {
     .benchmark_top {
         font-size: 15px;
@@ -170,12 +172,12 @@ span{
     }
 
     .bing, .Leonardo, .Chatgpt {
-        width: 48%; /* Divs en 2 colonnes */
+        width: 48%;
         margin-bottom: 15px;
     }
 
     .image-grid {
-        grid-template-columns: 1fr; /* 1 colonne */
+        grid-template-columns: 1fr; /* 1 seule colonne d'images */
     }
 
     .Chatgpt {
@@ -183,6 +185,7 @@ span{
     }
 }
 
+/* Mobile : 768px max */
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -212,7 +215,7 @@ span{
     }
 
     .image-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 seule colonne d'images */
     }
 
     .Chatgpt {
@@ -225,6 +228,7 @@ span{
     }
 }
 
+/* Très petit écran : 576px max */
 @media (max-width: 576px) {
     .benchmark_top {
         font-size: 13px;
@@ -247,7 +251,7 @@ span{
     }
 
     .image-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 seule colonne d'images */
     }
 
     .Chatgpt {
@@ -258,6 +262,7 @@ span{
         transform: scale(1.05);
     }
 }
+
 
 
 

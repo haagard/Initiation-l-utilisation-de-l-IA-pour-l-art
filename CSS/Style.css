@@ -268,13 +268,14 @@ nav ul li a:hover::after {
 
 
 
-/* ==================================== */
-/* ===== RESPONSIVE ===== */
+/*/* ==================================== */
+/* ====== RESPONSIVE ====== */
 /* ==================================== */
 
+/* Pour les écrans larges (jusqu'à 1200px) */
 @media (max-width: 1200px) {
     .header-text {
-        width: 90%; /* Réduit la largeur du conteneur */
+        width: 90%;
         padding: 15px;
         overflow: hidden;
     }
@@ -286,6 +287,7 @@ nav ul li a:hover::after {
 
     nav ul li {
         margin: 10px 0;
+        border: none; /* Suppression de la bordure dash */
     }
 
     nav ul li a {
@@ -301,9 +303,10 @@ nav ul li a:hover::after {
     }
 }
 
+/* Pour les écrans moyens (jusqu'à 992px) */
 @media (max-width: 992px) {
     #header {
-        padding: 0 5%; /* Ajuste le padding pour les écrans moyens */
+        padding: 0 5%;
     }
 
     .header-text h1 {
@@ -321,11 +324,12 @@ nav ul li a:hover::after {
 
     nav ul li {
         margin: 15px 0;
+        border: none; /* Suppression de la bordure dash */
     }
 
     .images-list img {
-        width: 100%; /* Les images prennent toute la largeur de l'écran */
-        max-width: 100%; /* Adaptation à la taille de l'écran */
+        width: 100%;
+        max-width: 100%;
     }
 
     .tuto-list {
@@ -338,9 +342,10 @@ nav ul li a:hover::after {
     }
 }
 
+/* Pour les petits écrans (jusqu'à 768px) */
 @media (max-width: 768px) {
     body {
-        padding-top: 50px; /* Réduit le padding pour plus d'espace sur petits écrans */
+        padding-top: 50px;
     }
 
     .header-text h1 {
@@ -350,6 +355,7 @@ nav ul li a:hover::after {
     nav ul li {
         margin: 10px 0;
         font-size: 20px;
+        border: none; /* Suppression de la bordure dash */
     }
 
     .images-list p {
@@ -367,7 +373,7 @@ nav ul li a:hover::after {
 
     .btn_benchmark,
     .btn_tuto {
-        width: 100%; /* Les boutons prennent toute la largeur */
+        width: 100%;
     }
 
     .modal-content {
@@ -375,6 +381,7 @@ nav ul li a:hover::after {
     }
 }
 
+/* Pour les très petits écrans (jusqu'à 576px) */
 @media (max-width: 576px) {
     .header-text h1 {
         font-size: 25px;
@@ -387,10 +394,11 @@ nav ul li a:hover::after {
 
     nav ul li {
         font-size: 18px;
+        border: none; /* Suppression de la bordure dash */
     }
 
     .images-list img {
-        width: 100%; /* Les images sont ajustées */
+        width: 100%;
         height: auto;
     }
 
@@ -403,12 +411,12 @@ nav ul li a:hover::after {
     }
 
     .tuto-list {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Réduit la taille des tutoriels */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
 
     .btn_benchmark,
     .btn_tuto {
-        width: 90%; /* Boutons prennent presque toute la largeur */
+        width: 90%;
         font-size: 16px;
     }
 
@@ -439,6 +447,7 @@ nav ul li a:hover::after {
 /* ==================================== */
 /* ===== P R E S E N T A T I O N ====== */
 /* ==================================== */
+
 .images-list p {
     font-size: 18px;
 }
@@ -576,9 +585,7 @@ nav ul li a:hover::after {
     display: block;
     transition: transform 0.7s;
 }
-/* ==================================== */
-/* ======== T U T O R I E L ======== */
-/* ==================================== */
+
 .tuto:hover img {
     transform: scale(1.3); /* Agrandir l'image au survol */
 }
