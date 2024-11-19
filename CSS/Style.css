@@ -7,15 +7,7 @@
     padding:0px;
     box-sizing: border-box;
 }
-.container {
-    justify-content: center;
-    
-    width: 100%; /* Utilise toute la largeur */
-    max-width: 1000px;
-    margin-left: 25%;
-    padding: 10px; /* Espace intérieur */
-    
-}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #F5F5DC;

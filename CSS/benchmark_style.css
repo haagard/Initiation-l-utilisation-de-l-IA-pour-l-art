@@ -19,6 +19,29 @@ img:hover {
     transform: scale(1.2,); /* Agrandit l'image de 10% sur les deux axes */
     transition: transform 0.3s ease; /* Ajoute une transition fluide */
 }
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%; /* Utilise toute la largeur disponible */
+    max-width: 1000px;
+    margin: 0 auto; /* Centre horizontalement */
+    padding: 10px; /* Ajoute un espace intérieur */
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 8px; /* Réduit le padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%; /* Supprime la limite pour petits écrans */
+        padding: 5px; /* Réduit encore le padding */
+    }
+}
+
 /* =========================== */
 /* ==== B E N C H M A R K === */
 /* =========================== */
@@ -104,165 +127,83 @@ span{
     transform: scale(1.1); /* Agrandir l'image au survol */
 }
 
-/* ==================================== */
-/* ===== RESPONSIVE ===== */
-/* ==================================== */
-
-/* Tablette et au-dessus : 1200px max */
-@media (max-width: 1200px) {
-    .benchmark_top {
-        font-size: 14px;
-        margin: 0.5em;
-    }
-
+/* Responsive pour les écrans jusqu'à 1024px */
+@media (max-width: 1024px) {
     .comparison-table th, .comparison-table td {
-        padding: 10px;
+        padding: 8px;
         font-size: 14px;
-    }
-
-    .comparison-table {
-        width: 95%;
-        margin: 0 auto;
     }
 
     .fight {
         flex-direction: column;
-        align-items: center;
     }
 
     .bing, .Leonardo, .Chatgpt {
         width: 100%;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
 
     .image-grid {
-        grid-template-columns: 1fr; /* 1 seule colonne d'images */
-        margin-top: 20px;
-    }
-
-    .Chatgpt {
-        width: 100%;
-        padding: 15px;
-    }
-
-    .Chatgpt img:active {
-        transform: scale(1.05);
+        grid-template-columns: 1fr;
     }
 }
 
-/* Tablette et plus petit : 992px max */
-@media (max-width: 992px) {
-    .benchmark_top {
-        font-size: 15px;
-    }
-
-    .comparison-table th, .comparison-table td {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    .comparison-table {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .fight {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .bing, .Leonardo, .Chatgpt {
-        width: 48%;
-        margin-bottom: 15px;
-    }
-
-    .image-grid {
-        grid-template-columns: 1fr; /* 1 seule colonne d'images */
-    }
-
-    .Chatgpt {
-        padding: 20px;
-    }
-}
-
-/* Mobile : 768px max */
+/* Responsive pour les écrans jusqu'à 768px */
 @media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-
-    .benchmark_top {
-        font-size: 14px;
-    }
-
-    .comparison-table th, .comparison-table td {
-        font-size: 12px;
-        padding: 8px;
-    }
-
     .comparison-table {
-        width: 100%;
-    }
-
-    .fight {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .bing, .Leonardo, .Chatgpt {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .image-grid {
-        grid-template-columns: 1fr; /* 1 seule colonne d'images */
-    }
-
-    .Chatgpt {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .Chatgpt img:active {
-        transform: scale(1.05);
-    }
-}
-
-/* Très petit écran : 576px max */
-@media (max-width: 576px) {
-    .benchmark_top {
-        font-size: 13px;
-        margin: 0.3em;
+        font-size: 12px;
     }
 
     .comparison-table th, .comparison-table td {
-        font-size: 12px;
-        padding: 8px;
+        padding: 6px;
+    }
+
+    .comparison-table thead {
+        display: none;
+    }
+
+    .comparison-table, .comparison-table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .comparison-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .comparison-table td:last-child {
+        border-bottom: none;
+    }
+
+    .oui {
+        font-size: 14px;
+        text-align: justify;
     }
 
     .fight {
         flex-direction: column;
-        align-items: center;
     }
 
     .bing, .Leonardo, .Chatgpt {
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     .image-grid {
-        grid-template-columns: 1fr; /* 1 seule colonne d'images */
+        grid-template-columns: 1fr;
     }
 
-    .Chatgpt {
-        padding: 10px;
+    .image-grid img {
+        width: 100%;
     }
 
-    .Chatgpt img:active {
-        transform: scale(1.05);
+    #versus {
+        padding: 0 10px;
     }
 }
-
 
 
 

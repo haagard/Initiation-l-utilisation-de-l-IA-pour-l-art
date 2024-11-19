@@ -19,6 +19,29 @@ img:hover {
     transform: scale(1.2, 1.2); /* Agrandit l'image de 10% sur les deux axes */
     transition: transform 0.3s ease; /* Ajoute une transition fluide */
 }
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%; /* Utilise toute la largeur disponible */
+    max-width: 1000px;
+    margin: 0 auto; /* Centre horizontalement */
+    padding: 10px; /* Ajoute un espace intérieur */
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 8px; /* Réduit le padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%; /* Supprime la limite pour petits écrans */
+        padding: 5px; /* Réduit encore le padding */
+    }
+}
+
 /* =========================== */
 /* ==== T U T O R I E L === */
 /* =========================== */
@@ -161,5 +184,23 @@ img:hover {
         height: 250px; /* Réduire la taille pour les petits écrans */
     }
 }
+.video-container {
+    position: relative;
+    width: 100%; /* Prend toute la largeur disponible */
+    max-width: 640px; /* Largeur maximale */
+    margin: 0 auto; /* Centre le conteneur */
+}
+
+.video-container video {
+    width: 100%; /* Ajuste à la largeur du conteneur */
+    height: auto; /* Maintient les proportions */
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        max-width: 100%; /* Supprime la limite pour petits écrans */
+    }
+}
+
 
 
