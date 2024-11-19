@@ -18,7 +18,7 @@ body {
 }
 
 
-h1, h2, h3, p {
+h1, h2, h3,h4, p {
     margin: 1em;
     color: #3B2C20;
 }
@@ -34,6 +34,10 @@ h2 {
 h3{
     text-decoration: underline;
     font-size: 30px;
+}
+h4{
+    text-decoration: underline;
+    font-size: 20px;
 }
 .sub-title {
     display: flex; /* Assurez-vous que l'élément est un conteneur flex */
@@ -79,7 +83,7 @@ img {
     flex-direction: column; /* Alignement vertical du contenu */
     justify-content: center; /* Centrage vertical */
     align-items: center; /* Centrage horizontal */
-    margin-top: 0; /* Enlever la marge en haut */
+    margin-top: 5px; /* Enlever la marge en haut */
 }
 
 /* Titre principal */
@@ -270,6 +274,7 @@ nav ul li a:hover::after {
         width: 90%;
         padding: 15px;
         overflow: hidden;
+        margin-top: 200px; /* Enlever la marge en haut */
     }
 
     nav ul {
@@ -455,8 +460,8 @@ nav ul li a:hover::after {
 
 .images-list img {
     width: 100%; /* Adapte l'image à la largeur du conteneur */
-    max-width: 400px; /* Limite la largeur maximale */
-    max-height: 400px; /* Évite que l'image dépasse en hauteur */
+    max-width: 350px; /* Limite la largeur maximale */
+    max-height: 350px; /* Évite que l'image dépasse en hauteur */
     border-radius: 10px;
     transition: transform 0.7s; /* Ajoute un effet fluide */
     transform-origin: bottom left;
@@ -476,7 +481,8 @@ nav ul li a:hover::after {
 /* Assurez-vous que les éléments flottants ne chevauchent pas */
 .images-list div {
     clear: both;
-    max width: 400px;
+    max width: 450px;
+    text-align:justify;
 }
 .images-list{
     padding: 10px;
